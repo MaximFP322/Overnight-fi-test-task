@@ -1,0 +1,16 @@
+name: overnight-fi-test-task
+
+services:
+  overnight-fi-test-task:
+    image: overnight-fi-test-task:local
+    build:
+      context: .
+      args:
+        RUSTFLAGS: "${RUSTFLAGS:--C target-cpu=native}"
+        CARGO_PROFILE_RELEASE_LTO: "${CARGO_PROFILE_RELEASE_LTO:-fat}"
+        CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "${CARGO_PROFILE_RELEASE_CODEGEN_UNITS:-1}"
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    volumes:
+      - ./logs:/app/logs
+    stop_signal: SIGINT
+    stop_grace_period: 30s

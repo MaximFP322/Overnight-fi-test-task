@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "selection": {
+    "start_record": 0,
+    "end_record_inclusive": 128,
+    "records": 129,
+    "metadata_change": "capture_end_ns is set to the last selected record received_ts_ns; all other metadata and every selected record are preserved"
+  },
+  "fixtures": [
+    {
+      "file": "binance_btcusdt.json",
+      "sha256": "a8b6e4d93d2ac6e7e79401c9987efee7ec13fccdb725a30b97bec0e006757937",
+      "bytes": 498629,
+      "venue": "binance",
+      "symbol": "BTCUSDT",
+      "tick_raw": 10000000,
+      "price_scale": 100000000,
+      "source": {
+        "path": "benches/orderbook_lab/data/binance-btcusdt.json",
+        "sha256": "f84e800583c50a7caea3338d78978d95575793b6dc56f6c3a272f16d87729728",
+        "records": 2928,
+        "capture_start_ns": 1793260594142637613,
+        "capture_end_ns": 1793260894142922733
+      },
+      "excerpt": {
+        "capture_start_ns": 1793260594142637613,
+        "capture_end_ns": 1793260608603832119,
+        "first_received_ts_ns": 1793260595704001275,
+        "last_received_ts_ns": 1793260608603832119,
+        "snapshots": 1,
+        "deltas": 128,
+        "level_updates": 9001,
+        "snapshot_bid_levels": 1000,
+        "snapshot_ask_levels": 1000
+      }
+    },
+    {
+      "file": "aster_btcusdt.json",
+      "sha256": "4a07790a48bc2bf40dedfe9333661bad53d7bf19848457f1c149a6e7b3a1e96e",
+      "bytes": 155507,
+      "venue": "aster",
+      "symbol": "BTCUSDT",
+      "tick_raw": 10000000,
+      "price_scale": 100000000,
+      "source": {
+        "path": "benches/orderbook_lab/data/aster-btcusdt.json",
+        "sha256": "8894919264e8577f902a876eae3ec7049a4619ac7a41a2e8a808cfaa8828b329",
+        "records": 2357,
+        "capture_start_ns": 1793260597205643686,
+        "capture_end_ns": 1793260897205990191
+      },
+      "excerpt": {
+        "capture_start_ns": 1793260597205643686,
+        "capture_end_ns": 1793260614176012201,
+        "first_received_ts_ns": 1793260598681577870,
+        "last_received_ts_ns": 1793260614176012201,
+        "snapshots": 1,
+        "deltas": 128,
+        "level_updates": 1142,
+        "snapshot_bid_levels": 1000,
+        "snapshot_ask_levels": 1000
+      }
+    }
+  ]
+}

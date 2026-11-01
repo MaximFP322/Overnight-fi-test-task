@@ -1,0 +1,36 @@
+[package]
+name = "overnight-fi-test-task"
+version = "0.1.0"
+edition = "2024"
+default-run = "overnight-fi-test-task"
+
+[features]
+bench-allocations = []
+
+[dependencies]
+signal-hook = { version = "0.3.18", default-features = false }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt", "ansi"] }
+sonic-rs = "0.5"
+hdrhistogram = { version = "7.6", default-features = false }
+serde = { version = "1", features = ["derive"] }
+rustls = { version = "0.23", default-features = false, features = ["std", "ring", "tls12"] }
+webpki-roots = "1"
+http = "1"
+bytes = "1"
+rtrb = "0.4"
+backon = { version = "1.6", default-features = false, features = ["std"] }
+tungstenite = { version = "0.30", default-features = false, features = ["handshake", "rustls-tls-webpki-roots"] }
+ureq = { version = "3.4.2", default-features = false, features = ["rustls"] }
+
+[dev-dependencies]
+criterion = { version = "0.8.2", default-features = false, features = ["cargo_bench_support", "html_reports", "plotters"] }
+stats_alloc = "0.1.10"
+
+[[bench]]
+name = "orderbook"
+harness = false
+
+[profile.bench]
+lto = "fat"
+codegen-units = 1
